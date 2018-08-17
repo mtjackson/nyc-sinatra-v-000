@@ -1,5 +1,6 @@
+<DOCTYPE! html>
 <table>
-  <th>Person Name</th>
+  <th>All Figures</th>
   <tr>
     <% @figures.each do |figure| %>
       <td align="center"><a href="/figures/<%= figure.id %>"><%= figure.name %></a>
@@ -13,3 +14,4 @@
 </table>
 <br>
 <a class="button" href="/">Go Home</a>
+</html>

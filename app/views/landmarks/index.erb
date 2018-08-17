@@ -1,0 +1,12 @@
+<DOCTYPE! html>
+<table>
+  <th>All Landmarks</th>
+  <tr>
+    <% @landmarks.each do |landmark| %>
+      <td align="center"><a href="/landmarks/<%= landmark.id %>"><%= landmark.name %></a>
+     </tr> </td>
+  <% end %>
+</table>
+<br>
+<a class="button" href="/">Go Home</a>
+</html>
