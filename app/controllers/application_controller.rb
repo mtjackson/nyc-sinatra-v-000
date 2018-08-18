@@ -5,7 +5,6 @@ class ApplicationController < Sinatra::Base
 
   use Rack::MethodOverride
 
-
   get '/' do
     erb :'application/root'
   end
