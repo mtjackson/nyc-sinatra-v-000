@@ -1,5 +1,8 @@
 class FiguresController < ApplicationController
 
+  use Rack::MethodOverride
+
+
   get '/figures' do
     @figures = Figure.all
     erb :'figures/index'
