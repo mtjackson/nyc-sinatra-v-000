@@ -12,7 +12,7 @@
     <br></br>
     <%@titles.each do |title|%>
     <label><%=title.name%></label>
-    <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id %>" value=""><%=title.name %></p>
+    <input type="checkbox" name="figure[title_ids][]" id="title_<%= title.id %>"></p>
     <%end%>
     <br></br>
 
@@ -22,7 +22,7 @@
     <label>Landmarks</label>
     <%@landmarks.each do |landmark|%>
     <label><%=landmark.name%></label>
-    <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id %>"><%=landmark.name %></p>
+    <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id %>"></p>
     <%end%>
     <br></br>
 

@@ -25,25 +25,25 @@ class FiguresController < ApplicationController
 
   post '/figures' do
     @figure = Figure.create(params["figure"])
-    if !params["title"]["name"].empty?
-      @figure.titles << Title.create(params["title"])
+    if !params[:title][:name].empty?
+      @figure.titles << Title.create(params[:title])
     end
-    if !params["landmark"]["name"].empty?
-      @figure.landmarks << Landmark.create(params["landmark"])
+    if !params[:landmark][:name].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
     end
 
     @figure.save
     redirect to "/figures/#{@figure.id}"
   end
 
-  post '/figures/:id' do
+  patch '/figures/:id' do
     @figure = Figure.find(params[:id])
-    @figure.update(params["figure"])
-    if !params["title"]["name"].empty?
-      @figure.titles << Title.create(name: params["title"]["name"])
+    @figure.update(params[:figure])
+    if !params[:title][:name].empty?
+      @figure.titles << Title.create(params[:title])
     end
-    if !params["landmark"]["name"].empty?
-      @figure.landmarks << Landmark.create(name: params["landmark"]["name"])
+    if !params[:landmark][:name].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
     end
 
     @figure.save
