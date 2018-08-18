@@ -1,10 +1,15 @@
 <DOCTYPE! html>
 <table>
-  <th>All Landmarks</th>
+  <th>Landmarks</th>
+  <th>Year Completed</th>
   <tr>
+
     <% @landmarks.each do |landmark| %>
       <td align="center"><a href="/landmarks/<%= landmark.id %>"><%= landmark.name %></a>
-     </tr> </td>
+      </td>
+      <td align="center"><%=landmark.year_completed%>
+      </td> </tr>
+
   <% end %>
 </table>
 <br>

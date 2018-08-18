@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>New Figure</title>
+  <title>Edit Figure</title>
 </head>
 <body>
 
-  <form action="/figures" method="post">
-    <label>Name</label><input type="text" name="figure[name]" id="figure_name"></p>
+  <form action="/figures/<%= @figure.id %>" method="post">
+    <label>Name</label><input type="text" name="figure[name]" id="figure_name" value="<%=@figure.name%>"></p>
 
     <label>Titles</label>
     <br></br>
     <%@titles.each do |title|%>
-    <label><%=title.name%></label>
     <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id %>" value=""><%=title.name %></p>
     <%end%>
     <br></br>
@@ -21,7 +20,6 @@
 
     <label>Landmarks</label>
     <%@landmarks.each do |landmark|%>
-    <label><%=landmark.name%></label>
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id %>"><%=landmark.name %></p>
     <%end%>
     <br></br>
@@ -31,7 +29,7 @@
     Year: <input type="number" name="landmark[year_completed]" id="Year Completed"></p>
     <br></br>
 
-    <input type="submit" value="Create New Figure">
+    <input type="submit" value="Edit Figure">
   </form>
 </body>
 </html>
